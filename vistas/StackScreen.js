@@ -3,15 +3,16 @@ import {Veiw, Text, StyleSheet, TouchableOpacity} from "react-native";
 
 const StackScreen = () => {
     return (
-        <view>
-            <text
+        <View>
+            <Text
                 style={{
                     fontSize: 30,
                     textAling: "center",
                     marginTop: "20%"
                 }}
-            >Stack Screen</text>
-        </view>
+            >Stack Screen</Text>
+        </View>
     );
     }
+
 export default StackScreen;

@@ -3,15 +3,15 @@ import {Veiw, Text, StyleSheet, TouchableOpacity} from "react-native";
 
 const HomeScreen = () => {
     return (
-        <view>
-            <text
+        <View>
+            <Text
                 style={{
                     fontSize: 30,
                     textAling: "center",
                     marginTop: "20%"
                 }}
-            >HomeScreen</text>
-        </view>
+            >HomeScreen</Text>
+        </View>
     );
     }
 export default HomeScreen;

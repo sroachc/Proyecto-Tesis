@@ -3,15 +3,15 @@ import {Veiw, Text, StyleSheet, TouchableOpacity} from "react-native";
 
 const EventCreate = () => {
     return (
-        <view>
-            <text
+        <View>
+            <Text
                 style={{
                     fontSize: 30,
                     textAling: "center",
                     marginTop: "20%"
                 }}
-            >EventCreate</text>
-        </view>
+            >EventCreate</Text>
+        </View>
     );
     }
 export default EventCreate;

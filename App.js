@@ -4,7 +4,7 @@ import Navegation from './Navegacion';
 
 export default function App() {
   return (  
-     <Navegation/>
+     <Navegation />
   );
 }
 

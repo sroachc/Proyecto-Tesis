@@ -11,7 +11,7 @@ import EventCreate from "./vistas/EventCreate";
 const Tab = createBottomTabNavigator();
 
 
-function MyTabs(){
+function MyTabs() {
     return (
         <Tab.Navigator>
             <Tab.Screen name="Home" component={HomeScreen}/>
@@ -21,10 +21,10 @@ function MyTabs(){
     );
 }
 
-export default function Navegation() {
+export default function Navigation() {
     return (
         <NavigationContainer>
-            <MyTabs/>
+            <MyTabs />
         </NavigationContainer>
     );
 }
