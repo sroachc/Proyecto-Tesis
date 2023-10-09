@@ -1,5 +1,5 @@
 import React from "react";
-import {Veiw, Text, StyleSheet, TouchableOpacity} from "react-native";
+import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
 
 const StackScreen = () => {
     return (

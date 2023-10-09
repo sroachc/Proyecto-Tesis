@@ -1,5 +1,5 @@
 import React from "react";
-import {Veiw, Text, StyleSheet, TouchableOpacity} from "react-native";
+import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
 
 const HomeScreen = () => {
     return (
@@ -7,7 +7,7 @@ const HomeScreen = () => {
             <Text
                 style={{
                     fontSize: 30,
-                    textAling: "center",
+                    textAlign: "center",
                     marginTop: "20%"
                 }}
             >HomeScreen</Text>
