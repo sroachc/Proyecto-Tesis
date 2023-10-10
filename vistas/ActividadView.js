@@ -10,7 +10,7 @@ const ActividadView = () => {
                     textAlign: "center",
                     marginTop: "20%"
                 }}
-            >ActividadView</Text>
+            >EventCreate</Text>
         </View>
     );
     }

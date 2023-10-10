@@ -10,7 +10,7 @@ const PerfilView = () => {
                     textAlign: "center",
                     marginTop: "20%"
                 }}
-            >PerfilView</Text>
+            >EventCreate</Text>
         </View>
     );
     }
