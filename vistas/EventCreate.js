@@ -2,8 +2,12 @@ import React from "react";
 import { StatusBar } from "react-native";
 import {View, Text, StyleSheet, TouchableOpacity, TextInput} from "react-native";
 import ButtonGradient from "../Botones/button";
+import Categorias from "../Components/Categoria";
+
 
 const EventCreate = () => {
+    const [selectedCategory, setSelectedCategory] = useState("");
+
     return (
         <View style={styles.container}>
             <Text style={styles.titulo}>Crea tu Encuentro</Text>
@@ -14,6 +18,10 @@ const EventCreate = () => {
             <TextInput
                 placeholder="Categoria del Encuentro"
                 style={styles.textinput}
+            />
+            <Categorias
+                selectedCategory={selectedCategory}
+                onCategoryChange={setSelectedCategory}
             />
             <ButtonGradient/>
             <StatusBar style="auto"/>
