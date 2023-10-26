@@ -1,15 +1,15 @@
 import { Picker } from "@react-native-picker/picker";
 
-const Categorias = ({ selectedCategory, onCategoryChange }) => {
+const Comunas = ({ selectedCategory, onCategoryChange }) => {
     return (
         <Picker
       selectedValue={selectedCategory}
       onValueChange={onCategoryChange}
       style={styles.picker}
     >
-      <Picker.Item label="Selecciona una categoría" value="" />
-      <Picker.Item label="Categoría 1" value="categoria1" />
-      <Picker.Item label="Categoría 2" value="categoria2" />
+      <Picker.Item label="Selecciona una Comuna" value="" />
+      <Picker.Item label="comuna 1" value="categoria1" />
+      <Picker.Item label="comuna  2" value="categoria2" />
       
     </Picker>
 
@@ -29,4 +29,4 @@ const styles = {
         }
       };
       
-export default Categorias;
+export default Comunas;
