@@ -7,9 +7,11 @@ import Comunas from '../Components/Comuna';
 import FechaPicker from '../Components/fecha';
 import * as ImagePicker from 'expo-image-picker';
 import axios from 'axios';
+import {useNavigation} from '@react-navigation/native';
 
 
 const EventCreate = () => {
+  const navigation = useNavigation();
   const [eventName, setEventName] = useState('');
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDate, setSelectedDate,] = useState(null);
@@ -30,11 +32,14 @@ const EventCreate = () => {
     };
   
     try {
+      console.log('Enviando solicitud al servidor...');
       // Realiza una solicitud HTTP POST al servidor para crear el evento
       const response = await axios.post('http://192.168.100.3:3000/api/crear-eventos', eventData);
+      console.log('Respuesta del servidor:', response.data);
   
       // Si la solicitud fue exitosa, puedes mostrar un mensaje o realizar otras acciones necesarias
       console.log('Evento creado con éxito', response.data);
+      navigation.navigate('Encuentros'); // Asegúrate de que el nombre de la pantalla sea correcto
     } catch (error) {
       // En caso de error, maneja la situación, muestra un mensaje de error, etc.
       console.error('Error al crear el evento:', error);
@@ -146,7 +151,11 @@ const EventCreate = () => {
       <TouchableOpacity onPress={selectImage}>
         <Text>Selecciona una imagen</Text>
       </TouchableOpacity>
-      <ButtonGradient  onPress={handlePublishEvent}/>
+      <ButtonGradient onPress={() => {
+                      console.log('Botón de Publicar presionado');
+                      handlePublishEvent();
+                      }}/>
+
       <StatusBar style="auto" />
     </ScrollView>
   );
