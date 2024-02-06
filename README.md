@@ -2,8 +2,9 @@
  
 Propuesta de aplicación móvil de creación de eventos sociales.
 
-- Aplicacion móvil desarrollada con el framework react native y node.js. Compatible con Android y IOS.
+Aplicacion móvil desarrollada con el framework react native y node.js. Compatible con Android y IOS.
 
+## Funcionalidad
 La funcionalidad principal para los usuarios incluye la capacidad de acceder a la aplicación desde sus dispositivos móviles y participar 
 activamente en la creación y participación en eventos. Pueden crear eventos conforme a los parámetros establecidos por la aplicación, permitiendo
 así una amplia variedad de opciones y actividades sociales. Por otro lado, los administradores tienen acceso privilegiado para realizar 
@@ -11,11 +12,17 @@ operaciones de CRUD (Crear, Leer, Actualizar y Eliminar) tanto de usuarios como 
 Además, tienen la capacidad de obtener estadísticas detalladas que proporcionan una visión holística del rendimiento y la interacción de los usuarios con la aplicación,
 lo que les permite tomar decisiones informadas para mejorar continuamente la experiencia del usuario y la eficiencia del sistema.
 
-Lenguajes: 
-- Javascript.
-
-Framework: 
-- React Native.
+## Requisitos Previos
+Para configurar correctamente el entorno de desarrollo de UNITE, asegúrate de tener instalados los siguientes componentes:
+- Node.js: Descárgalo desde el sitio oficial de Node.js. Selecciona "Windows Installer (.msi) 64-bit" y sigue las instrucciones de instalación.
+- NVM (Node Version Manager): Para gestionar la instalación de Node 18.16.0. Descarga el instalador desde la documentación oficial de GitHub y sigue las instrucciones de instalación.
+- NPM: Node.js debería haber instalado NPM simultáneamente. Verifica su instalación abriendo el "símbolo de sistema" en modo administrador y ejecutando npm -v.
+- NPX: Es una herramienta incluida con NPM. Verifica su instalación ejecutando npx -v en el "Símbolo de sistema".
+- JDK 11 (Java SE Development Kit 11.0.20): Descárgalo desde el sitio oficial de Oracle y sigue las instrucciones de instalación.
+- Android Studio: Descárgalo desde la página oficial de Android Studio y sigue las instrucciones de instalación.
+- Emulador de Android Studio: Configúralo desde el "Virtual Device Manager" dentro de Android Studio.
+- MariaDB: Descarga el instalador desde el sitio oficial de MariaDB y sigue las instrucciones de instalación.
+- Visual Studio Code (VSC): Descárgalo desde su sitio oficial y sigue las instrucciones de instalación.
 
 ### Screenshots:
 
