@@ -11,7 +11,13 @@ operaciones de CRUD (Crear, Leer, Actualizar y Eliminar) tanto de usuarios como 
 Además, tienen la capacidad de obtener estadísticas detalladas que proporcionan una visión holística del rendimiento y la interacción de los usuarios con la aplicación,
 lo que les permite tomar decisiones informadas para mejorar continuamente la experiencia del usuario y la eficiencia del sistema.
 
+Lenguajes: Javascript.
+
+Framework: React Native.
+
+
 SCREENSHOTS:
+
 ![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/d95f77fb-aacb-4df1-bc3e-79c85d04be66)
 ![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/372b6c43-964f-4dba-a69d-d545160b7607)
 ![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/c3869532-fb99-4e4d-986d-13809d562509)
