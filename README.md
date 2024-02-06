@@ -1,6 +1,6 @@
 # Proyecto Tesis UNITE (2023)
  
-** Propuesta de aplicación móvil de creación de eventos sociales.
+Propuesta de aplicación móvil de creación de eventos sociales.
 
 - Aplicacion móvil desarrollada con el framework react native y node.js. Compatible con Android y IOS.
 
