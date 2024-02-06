@@ -1,6 +1,8 @@
-Proyecto Tesis (2023)
+Proyecto Tesis UNITE (2023)
+ 
+Propuesta de aplicación móvil de creación de eventos sociales.
 
-Aplicacion móvil desarrollada con el framework react native y node.js.
+Aplicacion móvil desarrollada con el framework react native y node.js. Compatible con Android y IOS.
 
 La funcionalidad principal para los usuarios incluye la capacidad de acceder a la aplicación desde sus dispositivos móviles y participar 
 activamente en la creación y participación en eventos. Pueden crear eventos conforme a los parámetros establecidos por la aplicación, permitiendo
