@@ -17,7 +17,7 @@ Lenguajes:
 Framework: 
 - React Native.
 
-## SCREENSHOTS:
+### Screenshots:
 
 ![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/d95f77fb-aacb-4df1-bc3e-79c85d04be66)
 ![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/372b6c43-964f-4dba-a69d-d545160b7607)
