@@ -19,7 +19,7 @@ Framework:
 
 ### Screenshots:
 
-![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/d95f77fb-aacb-4df1-bc3e-79c85d04be66)
+<img src="https://github.com/sroachc/Proyecto-Tesis/assets/71527904/d95f77fb-aacb-4df1-bc3e-79c85d04be66" width="300">
 ![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/372b6c43-964f-4dba-a69d-d545160b7607)
 ![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/c3869532-fb99-4e4d-986d-13809d562509)
 ![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/9c1b9eab-8170-4866-84b6-cf7a7f748da2)
