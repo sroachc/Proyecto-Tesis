@@ -14,15 +14,17 @@ lo que les permite tomar decisiones informadas para mejorar continuamente la exp
 
 ## Requisitos Previos
 Para configurar correctamente el entorno de desarrollo de UNITE, asegúrate de tener instalados los siguientes componentes:
-- Node.js: Descárgalo desde el sitio oficial de Node.js. Selecciona "Windows Installer (.msi) 64-bit" y sigue las instrucciones de instalación.
-- NVM (Node Version Manager): Para gestionar la instalación de Node 18.16.0. Descarga el instalador desde la documentación oficial de GitHub y sigue las instrucciones de instalación.
-- NPM: Node.js debería haber instalado NPM simultáneamente. Verifica su instalación abriendo el "símbolo de sistema" en modo administrador y ejecutando npm -v.
-- NPX: Es una herramienta incluida con NPM. Verifica su instalación ejecutando npx -v en el "Símbolo de sistema".
-- JDK 11 (Java SE Development Kit 11.0.20): Descárgalo desde el sitio oficial de Oracle y sigue las instrucciones de instalación.
-- Android Studio: Descárgalo desde la página oficial de Android Studio y sigue las instrucciones de instalación.
-- Emulador de Android Studio: Configúralo desde el "Virtual Device Manager" dentro de Android Studio.
-- MariaDB: Descarga el instalador desde el sitio oficial de MariaDB y sigue las instrucciones de instalación.
-- Visual Studio Code (VSC): Descárgalo desde su sitio oficial y sigue las instrucciones de instalación.
+
+- **Node.js**: Descárgalo desde el [sitio oficial de Node.js](https://nodejs.org/en/download). Selecciona "Windows Installer (.msi) 64-bit" y sigue las instrucciones de instalación.
+- **NVM (Node Version Manager)**: Para gestionar la instalación de Node 18.16.0. Descarga el instalador desde la [documentación oficial de GitHub](https://github.com/coreybutler/nvm-windows/releases) y sigue las instrucciones de instalación.
+- **NPM**: Node.js debería haber instalado NPM simultáneamente. Verifica su instalación abriendo el "símbolo de sistema" en modo administrador y ejecutando [npm -v](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+- **NPX**: Es una herramienta incluida con NPM. Verifica su instalación ejecutando [npx -v](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) en el "Símbolo de sistema".
+- **JDK 11 (Java SE Development Kit 11.0.20)**: Descárgalo desde el [sitio oficial de Oracle](https://www.oracle.com/cl/java/technologies/javase/jdk11-archive-downloads.html) y sigue las instrucciones de instalación.
+- **Android Studio**: Descárgalo desde la [página oficial de Android Studio](https://developer.android.com/studio?gclid=CjwKCAiA1MCrBhAoEiwAC2d64VQAhXHfYzy8Qk0zfiwum5H-4dLKhawcXiurkPXRNGMfdy6MDh3T6RoCa60QAvD_BwE&gclsrc=aw.ds&hl=es-419) y sigue las instrucciones de instalación.
+- **Emulador de Android Studio**: Configúralo desde el "Virtual Device Manager" dentro de Android Studio.
+- **MariaDB**: Descarga el instalador desde el [sitio oficial de MariaDB](https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.3.1&os=windows&cpu=x86_64&pkg=msi&m=insacom) y sigue las instrucciones de instalación.
+- **Visual Studio Code (VSC)**: Descárgalo desde su [sitio oficial](https://code.visualstudio.com/download) y sigue las instrucciones de instalación.
+
 
 ### Screenshots:
 
