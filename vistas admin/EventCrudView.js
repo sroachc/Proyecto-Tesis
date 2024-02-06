@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { useFocusEffect } from '@react-navigation/native';
-import { StatusBar, View, Alert, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView, } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert, StyleSheet } from 'react-native';
 import axios from 'axios';
-import { useNavigation } from '@react-navigation/native';
+import { Picker } from '@react-native-picker/picker';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import { Slider } from 'react-native-elements';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { format } from 'date-fns';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Picker } from '@react-native-picker/picker';
-import Slider from '@react-native-community/slider';
-import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
-const EventCreate = () => {
+
+
+const EventCrudView = () => {
   const navigation = useNavigation();
+  const [events, setEvents] = useState([]); 
   const [eventName, setEventName] = useState('');
+
   const [selectedDate, setSelectedDate] = useState(null);
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [hasFocused, setHasFocused] = useState(false);
@@ -54,8 +58,23 @@ const EventCreate = () => {
     };
     fetchCategorias();
     fetchComunas();
+    fetchEvents();
   }, []);
 
+  const fetchEvents = async () => {
+    try {
+        const response = await axios.get('http://190.44.53.185:3300/api/listar-eventos');
+      setEvents(response.data.eventos);
+    } catch (error) {
+      console.error('Error al obtener eventos:', error);
+    }
+  };
+  
+  const handleEditEvent = (eventId) => {
+    
+  };
+
+  
   const handlePublishEvent = async () => {
     const formattedDate = format(selectedDate, 'yyyy-MM-dd');
     const formattedTime = format(selectedTime, 'HH:mm:ss');
@@ -68,17 +87,17 @@ const EventCreate = () => {
 
     if (selectedCategoria === "") {
       Alert.alert('Error de registro', 'Selecciona una categoria para poder publicar.');
-      return; 
+      return; // Detener la ejecución si la categoria está vacía
     }
 
     if (selectedComuna === "") {
       Alert.alert('Error de registro', 'Selecciona una comuna para poder publicar.');
-      return; 
+      return; // Detener la ejecución si la comuna está vacía
     }
 
     if (direccion === "") {
       Alert.alert('Error de registro', 'Ingresa una Dirección para poder publicar.');
-      return; 
+      return; // Detener la ejecución si la dirección está vacía
     }
 
     const currentDate = new Date();
@@ -116,7 +135,7 @@ const EventCreate = () => {
 
       console.log('Evento creado con éxito', response.data);
       resetStates();
-      
+      navigation.navigate('Encuentros');
     } catch (error) {
       console.error('Error al crear el evento:', error);
     }
@@ -162,9 +181,27 @@ const EventCreate = () => {
     setRequesitos(text);
   };
 
+  const renderEventList = () => {
+    return events.map((event) => (
+      <View key={event.cod_evento} style={styles.userItem}>
+        <Text>{`${event.cod_evento} ${event.nombre}`}</Text>
+        <View style={{ flexDirection: 'row' }}>
+          <TouchableOpacity style={styles.editButton} onPress={() => handleEditEvent(event.cod_evento)}>
+            <Icon name="edit" size={20} color="black" />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => handleDeleteEvent(event.cod_evento)} style={styles.deleteButton}>
+            <Icon name="trash" size={20} color="red" />
+          </TouchableOpacity>
+        </View>
+      </View>
+    ));
+  };
+
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.titulo}>Crea tu Encuentro</Text>
+      <Text style={styles.titulo}>GESTIÓN DE EVENTO</Text>
+      <Text style={styles.titulo}>CREAR EVENTO</Text>
       <TextInput
         placeholder="Nombre del Encuentro"
         style={styles.input}
@@ -288,152 +325,161 @@ const EventCreate = () => {
         style={styles.button}
       >
         <Text style={{ color: 'white', textAlign: 'center', fontWeight: 'bold', fontSize: 16 }}>Publicar</Text>
+      
+      {/* Resto del código */}
+      {/* LISTA DE EVENTOS EDITAR ELIMINAR */}
+      <Text style={styles.label}>LISTA DE EVENTOS</Text>
+      <View style={styles.userList}>
+        <View style={styles.userItem}>
+          <Text style={{ fontWeight: 'bold' }}>ID</Text>
+          <Text style={{ fontWeight: 'bold' }}>Nombre</Text>
+          <Text style={{ fontWeight: 'bold' }}>Acciones</Text>
+        </View>
+        {renderEventList()}
+      </View>
+      
       </TouchableOpacity>
-      <StatusBar style="auto" />
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    paddingTop: 20,
-    paddingBottom: 40,
-  },
-  titulo: {
-    fontSize: 25,
-    color: '#000',
-    fontWeight: 'bold',
-    marginBottom: 5,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: 'black',
-    padding: 15,
-    width: '70%',
-    height: 45,
-    marginTop: 10,
-    borderRadius: 20,
-    backgroundColor: 'white',
-    marginBottom: 20,
-  },
-  inputPicker: {
-    borderWidth: 1,
-    borderColor: 'black',
-    width: '56%',
-    height: 45,
-    borderRadius: 30,
-    backgroundColor: 'white',
-    marginBottom: 10,
-  },
-  textarea: {
-    borderWidth: 1,
-    borderColor: 'gray',
-    padding: 15,
-    width: '80%',
-    height: 60,
-    marginTop: 10,
-    borderRadius: 20,
-    backgroundColor: 'white',
-    paddingBottom: 30,
-  },
-  errorText: {
-    color: 'red',
-    marginTop: 10,
-  },
-  label: {
-    marginTop: 15,
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  button: {
-    borderRadius: 30,
-    marginTop: 20,
-    backgroundColor: '#FA8E7D',
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    height: '7%',
-  },
-  picker: {
-    width: '100%', // Ajusta el ancho según tus necesidades
-    alignSelf: 'center',
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 15,
-    marginBottom: 20,
-    height: '10%',
-  },
-  dateTimeContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '80%',
-    marginBottom: 20,
-    paddingLeft: 15
-  },
-  dateTimePicker: {
-    flex: 1,
-  },
-  TextFecha: {
-    fontWeight: 'bold',
-    marginLeft: 40,
-    fontSize: 15,
-  },
-  TextHora: {
-    fontWeight: 'bold',
-    fontSize: 15,
-    marginLeft: 30
-  },
-  dateContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FA8E7D',
-    borderRadius: 30,
-    padding: 5,
-    marginTop: 5,
-    width: '92%',
-  },
+    container: {
+      flexGrow: 1,
+      backgroundColor: 'white',
+      alignItems: 'center',
+      paddingTop: 20,
+      paddingBottom: 40,
+    },
+    titulo: {
+      fontSize: 25,
+      color: '#000',
+      fontWeight: 'bold',
+      marginBottom: 5,
+    },
+    input: {
+      borderWidth: 1,
+      borderColor: 'black',
+      padding: 15,
+      width: '70%',
+      height: 45,
+      marginTop: 10,
+      borderRadius: 20,
+      backgroundColor: 'white',
+      marginBottom: 20,
+    },
+    inputPicker: {
+      borderWidth: 1,
+      borderColor: 'black',
+      width: '56%',
+      height: 45,
+      borderRadius: 30,
+      backgroundColor: 'white',
+      marginBottom: 10,
+    },
+    textarea: {
+      borderWidth: 1,
+      borderColor: 'gray',
+      padding: 15,
+      width: '80%',
+      height: 60,
+      marginTop: 10,
+      borderRadius: 20,
+      backgroundColor: 'white',
+      paddingBottom: 30,
+    },
+    errorText: {
+      color: 'red',
+      marginTop: 10,
+    },
+    label: {
+      marginTop: 15,
+      fontSize: 15,
+      fontWeight: 'bold',
+      color: '#333',
+    },
+    button: {
+      borderRadius: 30,
+      marginTop: 20,
+      backgroundColor: '#FA8E7D',
+      paddingVertical: 15,
+      paddingHorizontal: 30,
+      height: '7%',
+    },
+    picker: {
+      width: '100%',
+      alignSelf: 'center',
+      borderWidth: 1,
+      borderColor: '#ccc',
+      borderRadius: 15,
+      marginBottom: 20,
+      height: '10%',
+    },
+    dateTimeContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      width: '80%',
+      marginBottom: 20,
+      paddingLeft: 15,
+    },
+    dateTimePicker: {
+      flex: 1,
+    },
+    TextFecha: {
+      fontWeight: 'bold',
+      marginLeft: 40,
+      fontSize: 15,
+    },
+    TextHora: {
+      fontWeight: 'bold',
+      fontSize: 15,
+      marginLeft: 30,
+    },
+    dateContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#FA8E7D',
+      borderRadius: 30,
+      padding: 5,
+      marginTop: 5,
+      width: '92%',
+    },
+    dateBox: {
+      alignItems: 'center',
+      marginLeft: 10,
+    },
+    month: {
+      color: 'white',
+      fontSize: 24,
+      fontWeight: 'bold',
+      marginLeft: 6,
+    },
+    day: {
+      color: 'white',
+      fontSize: 18,
+      fontWeight: 'bold',
+    },
+    year: {
+      color: 'white',
+      fontSize: 18,
+      fontWeight: 'bold',
+    },
+    hour: {
+      color: 'white',
+      fontSize: 24,
+      fontWeight: 'bold',
+    },
+    hourContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#FA8E7D',
+      borderRadius: 30,
+      padding: 5,
+      marginTop: 12,
+      width: '100%',
+      paddingLeft: 13,
+    },
+  });
+  
 
-  dateBox: {
-    alignItems: 'center',
-    marginLeft: 10,
-  },
-
-  month: {
-    color: 'white',
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginLeft: 6
-  },
-
-  day: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-
-  year: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  hour : {
-    color: 'white',
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  hourContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FA8E7D',
-    borderRadius: 30,
-    padding: 5,
-    marginTop: 12,
-    width: '100%',
-    paddingLeft: 13,
-  }
-});
-
-export default EventCreate;
+export default EventCrudView;
