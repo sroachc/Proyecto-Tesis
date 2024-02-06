@@ -19,11 +19,11 @@ Framework:
 
 ### Screenshots:
 
-<img src="https://github.com/sroachc/Proyecto-Tesis/raw/main/assets/71527904/d95f77fb-aacb-4df1-bc3e-79c85d04be66.png" width="480">
-<img src="https://github.com/sroachc/Proyecto-Tesis/raw/main/assets/71527904/372b6c43-964f-4dba-a69d-d545160b7607.png" width="480">
-<img src="https://github.com/sroachc/Proyecto-Tesis/raw/main/assets/71527904/c3869532-fb99-4e4d-986d-13809d562509.png" width="480">
-<img src="https://github.com/sroachc/Proyecto-Tesis/raw/main/assets/71527904/9c1b9eab-8170-4866-84b6-cf7a7f748da2.png" width="480">
-<img src="https://github.com/sroachc/Proyecto-Tesis/raw/main/assets/71527904/c756354e-42e4-47e2-a85b-f743a43d6c7d.png" width="480">
-<img src="https://github.com/sroachc/Proyecto-Tesis/raw/main/assets/71527904/ed5fe36c-86a9-44e9-bce4-eea959cdaf6b.png" width="480">
-<img src="https://github.com/sroachc/Proyecto-Tesis/raw/main/assets/71527904/f8ce4d28-2880-472e-9f43-4e4058b312cf.png" width="480">
-<img src="https://github.com/sroachc/Proyecto-Tesis/raw/main/assets/71527904/11039eee-cc56-4344-886d-3c8db815276c.png" width="480">
+![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/d95f77fb-aacb-4df1-bc3e-79c85d04be66)
+![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/372b6c43-964f-4dba-a69d-d545160b7607)
+![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/c3869532-fb99-4e4d-986d-13809d562509)
+![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/9c1b9eab-8170-4866-84b6-cf7a7f748da2)
+![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/c756354e-42e4-47e2-a85b-f743a43d6c7d)
+![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/ed5fe36c-86a9-44e9-bce4-eea959cdaf6b)
+![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/f8ce4d28-2880-472e-9f43-4e4058b312cf)
+![image](https://github.com/sroachc/Proyecto-Tesis/assets/71527904/11039eee-cc56-4344-886d-3c8db815276c)
