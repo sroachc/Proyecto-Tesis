@@ -15,6 +15,7 @@ Lenguajes: Javascript.
 
 Framework: React Native.
 
+---
 
 SCREENSHOTS:
 
