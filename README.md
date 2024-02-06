@@ -1,4 +1,4 @@
-<h1 align="center"> Proyecto Tesis UNITE (2023) </h1>
+<h1 align="left"> Proyecto Tesis UNITE (2023) </h1>
  
 Propuesta de aplicación móvil de creación de eventos sociales.
 
